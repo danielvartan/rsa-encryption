@@ -2,6 +2,8 @@ library(bslib)
 library(shiny)
 library(shinyjs)
 
+options(shiny.maxRequestSize = 100*1024^2)
+
 test_public_key <- function(public_key) {
   test <-
     public_key |>
@@ -35,11 +37,20 @@ ui <- bslib::page_fillable(
   tags$style(".btn: {width: 50%;}"),
 
   shiny::div(
-    shiny::tags$p(paste0(
-      "This Shiny app allows you to encrypt and decrypt files. ",
-      "Please note that only OpenSSL-generated keys are supported."
-    )),
-    class = "container d-flex align-items-center justify-content-center"
+    shiny::tags$p(
+      paste0(
+        "This Shiny app enables users to encrypt and decrypt files using the ",
+        "RSA algorithm."
+      ),
+      style = "margin-block-end: 0em;"
+    ),
+    shiny::tags$p(
+      paste0(
+        "Please note that only OpenSSL-generated keys are supported."
+      ),
+      style = "margin-block-end: 0em;"
+    ),
+    style = "text-align: center;"
   ),
 
   bslib::layout_columns(

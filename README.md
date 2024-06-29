@@ -8,7 +8,9 @@ MIT](https://img.shields.io/badge/license-MIT-green)](https://choosealicense.com
 
 📄📝📁📂🔒🔓🔑
 
-This repository contains the files for a [Shiny](https://shiny.posit.co/) dashboard that allows users to encrypt and decrypt files using the RSA algorithm.
+This repository contains the files for a [Shiny](https://shiny.posit.co/) dashboard that enables users to encrypt and decrypt files using the RSA algorithm.
+
+To learn more about Shiny, see Hadley Wickham's book [Mastering Shiny](https://mastering-shiny.org). 
 
 The code in this repository is released under the [MIT
 license](https://opensource.org/license/mit/).

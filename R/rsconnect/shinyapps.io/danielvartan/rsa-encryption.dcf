@@ -5,9 +5,9 @@ account: danielvartan
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 12251911
-bundleId: 8803562
+bundleId: 8803647
 url: https://danielvartan.shinyapps.io/rsa-encryption/
 version: 1
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: _dev.R|utils.R
+ignoredFiles: _dev.R
