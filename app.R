@@ -2,35 +2,10 @@ library(bslib)
 library(shiny)
 library(shinyjs)
 
+source(here::here("R", "_setup.R"))
+source(here::here("R", "utils.R"))
+
 options(shiny.maxRequestSize = 100*1024^2)
-
-test_public_key <- function(public_key) {
-  test <-
-    public_key |>
-    openssl::read_pubkey() |>
-    try(silent = TRUE)
-
-  if (!inherits(test, "try-error")) {
-    TRUE
-  } else {
-    FALSE
-  }
-}
-
-test_private_key <- function(private_key, password = NULL) {
-  checkmate::assert_string(password, null.ok = TRUE)
-
-  test <-
-    private_key |>
-    openssl::read_key(password = password) |>
-    try(silent = TRUE)
-
-  if (!inherits(test, "try-error")) {
-    TRUE
-  } else {
-    FALSE
-  }
-}
 
 ui <- bslib::page_fillable(
   shinyjs::useShinyjs(),
